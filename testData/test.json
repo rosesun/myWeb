@@ -57,5 +57,23 @@
             "src":"hfuedhfheu",
             "title":"heiheihei"
         }
+    ],
+    "urlData":[
+        {
+            "id":0,
+            "url":"/",
+            "name":"首页"
+        },
+        {
+            "id":1,
+            "url":"/showpic",
+            "name":"图片展示"
+        },
+        {
+            "id":2,
+            "url":"/uploadpic",
+            "name":"图片上传"
+        }
+
     ]
 }

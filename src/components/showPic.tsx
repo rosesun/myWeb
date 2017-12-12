@@ -49,7 +49,7 @@ class showPic extends React.Component< showPicProps,stateProps > {
     imgRun(key:number){
         let that = this;
         let itemDom:any = document.getElementsByClassName('img-item');
-        let itemBox:any = document.getElementsByClassName('pic-box')[0];
+        let itemBox:any = this.refs.picBox;
         let _wR = itemBox.clientWidth;
         let _hR = itemBox.clientHeight;
         for(let i = 0, len = itemDom.length; i < len; i++){
@@ -86,10 +86,6 @@ class showPic extends React.Component< showPicProps,stateProps > {
         }
     }
 
-    componentWillMount(){
-        console.log('首次渲染完之前')
-    }
-
     render(){
         let imgList = this.props.imgList;
         let imgItem = imgList.map((item) => {
@@ -107,15 +103,21 @@ class showPic extends React.Component< showPicProps,stateProps > {
                 </li>)
             });
         return (
-            <div className="pic-box">
-                <ul className="img-box">{imgItem}</ul>
+            <div className="img-con" ref="imgBox">
+                <div className="pic-box" ref="picBox">
+                    <ul className="img-box">{imgItem}</ul>
+                </div>
             </div>
             );
     }
 
     componentDidMount(){
         //此处可操作dom
-        console.log('真实的dom渲染出来之后调用');
+        let rootH:any = document.getElementById('root').clientHeight;
+        let imgConDom:any = this.refs.imgBox;
+        let picBoxDom:any = this.refs.picBox;
+        imgConDom.style.height = rootH - 100 +'px';
+        picBoxDom.style.height = rootH - 100 +'px';
         this.imgRun(0);
     }
 }

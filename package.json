@@ -17,6 +17,7 @@
     "koa": "^2.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
     "request": "^2.83.0"
   },
   "devDependencies": {

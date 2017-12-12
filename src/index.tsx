@@ -4,15 +4,17 @@ import 'style/common';
 
 import TopBar from "./components/topBar";
 import ShowPic from "./components/showPic";
+import Footer from "./components/footer";
 
 let testData = require("../testData/test.json");
-const list:number[] = [1,2,3,4,5];
 const imgList:any[] = testData.picData;
+const list:any[] = testData.urlData;
 
 ReactDOM.render(
     <div>
         <TopBar list={list} />
         <ShowPic imgList={imgList}/>
+        <Footer />
     </div>,
     document.getElementById("root")
 );

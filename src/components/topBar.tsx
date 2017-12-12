@@ -1,7 +1,13 @@
 import * as React from "react";
 import 'style/topBar';
 
-export interface TopBarProps { list:number[] }
+export interface TopBarProps { list:any[] }
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 
 class TopBar extends React.Component<TopBarProps, {}> {
@@ -11,10 +17,12 @@ class TopBar extends React.Component<TopBarProps, {}> {
     render() {
         let arrLists = this.props.list;
         let listItems = arrLists.map((arrList) => {
-            return(<li key={arrList} className="fl">{arrList}</li>)
+            return(<li key={arrList.id} className="fl"><Link to={arrList.url}>{arrList.name}</Link></li>)
         });
         return (
-            <ul className="top-items">{listItems}</ul>
+            <Router>
+                <ul className="top-items">{listItems}</ul>
+            </Router>
             )
     }
 }

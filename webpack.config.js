@@ -36,8 +36,8 @@ module.exports = {
             template:path.resolve(__dirname,'./src/index.html')
         })
     ],
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    },
+    // externals: {
+    //     "react": "React",
+    //     "react-dom": "ReactDOM"
+    // },
 };
