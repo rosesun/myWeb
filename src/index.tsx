@@ -1,19 +1,31 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import 'style/common';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
+import 'style/common';
 import TopBar from "./components/topBar";
-import ShowPic from "./components/showPic";
 import Footer from "./components/footer";
 
+//page component import
+import IndexPic from './pages/indexPic';
+import uploadPage from './pages/uploadPage';
+
 let testData = require("../testData/test.json");
-const imgList:any[] = testData.picData;
 const list:any[] = testData.urlData;
 
 ReactDOM.render(
     <div>
-        <TopBar list={list} />
-        <ShowPic imgList={imgList}/>
+    <Router>
+        <div>
+            <TopBar list={list} />
+            <Route exact path="/" component={IndexPic} />
+            <Route path="/uploadpic" component={uploadPage} />
+        </div>
+    </Router>
         <Footer />
     </div>,
     document.getElementById("root")

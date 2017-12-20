@@ -20,10 +20,8 @@ class TopBar extends React.Component<TopBarProps, {}> {
             return(<li key={arrList.id} className="fl"><Link to={arrList.url}>{arrList.name}</Link></li>)
         });
         return (
-            <Router>
                 <ul className="top-items">{listItems}</ul>
-            </Router>
-            )
+                )
     }
 }
 

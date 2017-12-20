@@ -14,13 +14,13 @@ module.exports = {
     resolve:{
         extensions: [".ts",".tsx",".js",".json",".styl"],
         alias:{
-            "style":path.resolve('src/assets/css')
+            style:path.resolve(__dirname,'src/assets/css')
             }
     },
 
     module:{
         rules: [
-            { test: /\.tsx?$/, exclude: /node_modules/, use: "awesome-typescript-loader"},
+            { test: /\.tsx?$/, use: "awesome-typescript-loader"},
             { test: /\.json$/, use:"json-loader"},
             { test: /\.styl$/, use:['style-loader','css-loader','stylus-loader']},
             { enforce: "pre", test: /\.js$/, exclude: /node_modules/,use: "source-map-loader"}
